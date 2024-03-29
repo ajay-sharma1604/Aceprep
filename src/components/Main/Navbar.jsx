@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -10,7 +11,6 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     // Cleanup function to remove event listener on unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -18,13 +18,8 @@ function Navbar() {
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
-
   return (
-    <div
-      className={`fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center z-50 transition-all duration-300 ease-in-out ${
-        isScrolled ? "bg-white shadow-md" : "bg-white shadow-mdt"
-      }`}
-    >
+    <div className="flex justify-between items-center py-4 px-6 drop-shadow-2xl sticky top-0 bg-white md:flex-row md:justify-between md:items-center">
       <div className="text-2xl font-bold">AcePrep</div>
       <div className="md:hidden">
         <button className="focus:outline-none" onClick={toggleNav}>
@@ -58,29 +53,29 @@ function Navbar() {
           isNavOpen ? "block" : "hidden"
         } md:flex md:justify-center md:items-center gap-8 flex-col md:flex-row`}
       >
-        <a href="#" className="text-gray-700 hover:text-blue-500">
+        <Link to={"/"} className="hover:text-gray-300">
           Home
-        </a>
-        <a href="#" className="text-gray-700 hover:text-blue-500">
+        </Link>
+        <Link to={"/practice"} className="hover:text-gray-300">
           Practice
-        </a>
-        <a href="#" className="text-gray-700 hover:text-blue-500">
+        </Link>
+        <Link to={"/mock"} className="hover:text-gray-300">
           Mock
-        </a>
-        <a href="#" className="text-gray-700 hover:text-blue-500">
+        </Link>
+        <Link to={"/resources"} className="hover:text-gray-300">
           Resources
-        </a>
-        <a href="#" className="text-gray-700 hover:text-blue-500">
+        </Link>
+        <Link to={"/ats"} className="hover:text-gray-300">
           ATS
-        </a>
-        <div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 mx-3 rounded-lg">
-            Log In
-          </button>
-          <button className="bg-gray-300 hover:bg-green-600 text-white font-bold py-1 px-4 rounded-lg">
-            Sign Up
-          </button>
-        </div>
+        </Link>
+        {/* <div>
+                            <Link to={"/login"}>
+                                <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 mx-3 rounded-lg">Log In</button>
+                            </Link>
+                            <Link to={"/signup"}>
+                                <button className="bg-gray-300 hover:bg-green-600 text-white font-bold py-1 px-4 rounded-lg">Sign Up</button>
+                            </Link>
+                        </div> */}
       </div>
     </div>
   );
