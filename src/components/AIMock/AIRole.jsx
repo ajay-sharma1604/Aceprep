@@ -10,12 +10,12 @@ const AIRole = () => {
       <div className="relative inline-block text-left">
         <button
           onClick={toggleDropdown}
-          className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-200 focus:ring-blue-500"
+          className="inline-flex justify-center w-full px-24 py-4 mx-8 text-xl font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-200 focus:ring-blue-500"
         >
-          Options
+          Role
           {/* Icon for dropdown */}
           <svg
-            className="-mr-1 ml-2 h-5 w-5"
+            className="-mr-1 ml-2 h-8 w-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -38,7 +38,7 @@ const AIRole = () => {
             aria-labelledby="menu-button"
             tabIndex="-1"
           >
-            <div className="py-1" role="none">
+            <div className="py-1 " role="none">
               {/* Dropdown menu items */}
               <a
                 href="#"
@@ -47,7 +47,7 @@ const AIRole = () => {
                 tabIndex="-1"
                 id="menu-item-0"
               >
-                Menu Item 1
+                Frontend Developer
               </a>
               <a
                 href="#"
@@ -56,7 +56,7 @@ const AIRole = () => {
                 tabIndex="-1"
                 id="menu-item-1"
               >
-                Menu Item 2
+                Backend Developer
               </a>
               <a
                 href="#"
@@ -65,7 +65,34 @@ const AIRole = () => {
                 tabIndex="-1"
                 id="menu-item-2"
               >
-                Menu Item 3
+                Full Stack Developer
+              </a>
+              <a
+                href="#"
+                className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                role="menuitem"
+                tabIndex="-1"
+                id="menu-item-2"
+              >
+                Full Stack Developer
+              </a>
+              <a
+                href="#"
+                className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                role="menuitem"
+                tabIndex="-1"
+                id="menu-item-2"
+              >
+                Full Stack Developer
+              </a>
+              <a
+                href="#"
+                className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                role="menuitem"
+                tabIndex="-1"
+                id="menu-item-2"
+              >
+                Full Stack Developer
               </a>
             </div>
           </div>

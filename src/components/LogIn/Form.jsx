@@ -4,12 +4,19 @@ import { useEffect } from "react";
 import * as emoji from "node-emoji";
 import Lottie from "react-lottie";
 import hello from "../../assets/lotties/hello";
-import { useGoogleLogin } from "@react-oauth/google";
+import  {GoogleLogin}  from "@react-oauth/google";
+
 
 const DisableScrollComponent = () => {
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
-  });
+  
+  const login = <GoogleLogin
+  onSuccess={credentialResponse => {
+    console.log(credentialResponse);
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>;
 
   useEffect(() => {
     // Disable scrolling when the component mounts
@@ -51,7 +58,17 @@ const DisableScrollComponent = () => {
           </p>
         </div>
         <form className="mt-6">
-          <button
+          <div className="flex justify-center"
+          
+          >
+          <GoogleLogin 
+          
+          onSuccess={function(credentialResponse){
+            console.log(credentialResponse)
+          }} />
+          </div>
+          
+          {/* <button
             onClick={() => login()}
             className="flex items-center justify-center w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4  focus:outline-none focus:ring-2 focus:ring-offset-2  opacity-100 hover:bg-gray-100 "
           >
@@ -81,7 +98,7 @@ const DisableScrollComponent = () => {
                 d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
               ></path>
             </svg>
-          </button>
+          </button> */}
           <div className="mb-4">
             <label htmlFor="email" className="block font-medium text-gray-700">
               Email
@@ -114,12 +131,12 @@ const DisableScrollComponent = () => {
             Log In
           </button>
         </form>
-        <p className="mt-4 text-center text-gray-600">
+        {/* <p className="mt-4 text-center text-gray-600">
           Don't have an account?{" "}
-          <a href="/signup" className="text-blue-500">
+          <Link to={"/signup"} className="text-blue-500">
             Sign up
-          </a>
-        </p>
+          </Link>
+        </p> */}
       </div>
     </div>
   );
