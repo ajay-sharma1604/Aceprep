@@ -28,7 +28,7 @@ const SheetCard= () => {
     
     <div className="flex justify-evenly items-center space-x-4 ">
     <div class=" shadow-lg rounded-lg  transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg p-4 flex items-center justify-center space-x-2 px-6 py-4 bg-gray-100 gap-4 border-[3px]">
-        <h1 class="text-lg font-bold transition duration-300 ease-in-out">Sheet 1</h1>
+        <h1 class="text-lg font-bold transition duration-300 ease-in-out hover:text-blue-500">Sheet 1</h1>
         {<CiFileOn size={30}/>}
     </div>
     <div class="shadow-lg rounded-lg  transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg p-4 flex items-center justify-center space-x-2 px-6 py-4  bg-gray-100 gap-4 border-[3px]">

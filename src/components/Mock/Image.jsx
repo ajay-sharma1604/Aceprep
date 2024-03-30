@@ -1,9 +1,9 @@
-import image from '../../assets/images/Main1.jpg' // imp
+import aiimage from '../../assets/images/aiimg1.jpeg' // imp
 
 function Image() {
 return (
     <div className="w-screen h-screen">
-            <img src={image} alt="background image" className="w-full h-full" />
+            <img src={aiimage} alt="background image" className="w-full h-full" />
     </div>
 )
 }
