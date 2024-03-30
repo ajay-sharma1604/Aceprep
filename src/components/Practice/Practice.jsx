@@ -3,12 +3,12 @@ import ImageBox from './components/Imagebox'
 import CardSection from './components/Card'
 import SheetCard from './components/SheetCards'
 import FooterImage from './components/Footer'
-import Navbar from './components/Navbar'
+import Navbar from "../Main/Navbar"
 
 function Practice() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <ImageBox />
       <CardSection />
       <SheetCard />
