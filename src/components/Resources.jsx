@@ -62,11 +62,6 @@ const Resources = () => {
     </div>
   );
 };
-async function Res(){
-  const response = await fetch("http://localhost:3000/api/resources");
-  const data = await response.json();
-  console.log(data);
-}
 
 export default Resources;
 

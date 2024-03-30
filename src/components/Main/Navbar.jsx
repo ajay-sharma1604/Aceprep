@@ -1,9 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import animationData from '../../assets/lotties/home.json';
+import Lottie from "react-lottie";
+import logo from '../../assets/images/Aceprep.png';
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +32,19 @@ function Navbar() {
     setIsNavOpen(!isNavOpen);
   };
   return (
-    <div className="flex justify-between items-center py-4 px-6 drop-shadow-2xl sticky top-0 bg-white md:flex-row md:justify-between md:items-center">
-      <div className="text-2xl font-bold">AcePrep</div>
+    <div className="flex justify-between items-center py-1 px-6 drop-shadow-2xl sticky top-0 bg-white md:flex-row md:justify-between md:items-center">
+      <div className="flex">
+      <img src={logo} alt="Logo" className="h-14 w-auto" />
+      <div className="text-2xl font-bold my-auto">AcePrep</div>
+      </div>
       <div className="md:hidden">
+
+      {/* <img src={} alt="Your GIF" className="absolute bottom-0 right-0 m-4" /> */}
+      <Lottie 
+	    options={defaultOptions}
+        height={600}
+        width={600}
+      />
         <button className="focus:outline-none" onClick={toggleNav}>
           <svg
             className="w-6 h-6 text-gray-600"
@@ -53,6 +76,8 @@ function Navbar() {
           isNavOpen ? "block" : "hidden"
         } md:flex md:justify-center md:items-center gap-8 flex-col md:flex-row`}
       >
+
+
         <Link to={"/"} className="hover:text-gray-300">
           Home
         </Link>
