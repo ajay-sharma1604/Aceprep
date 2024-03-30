@@ -1,3 +1,4 @@
+import React from "react";
 import image from "../assets/images/Aceprep.png";
 import { FaUser, FaEnvelope, FaLock, FaPhone } from "react-icons/fa"; // Ensure you have react-icons installed
 import animationData from "../assets/lotties/signupanimation.json";
@@ -19,11 +20,10 @@ const SignUpCard = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target.firstName);
-  }
+  };
 
-  const handleLogin = () => {};
   return (
-    <GoogleOAuthProvider clientId="616250879564-fcmts04ko7j71r4hi1tkpg9jlf13etkf.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="536203429777-qvvtvk1rd6qie6coee68645gadov8f8r.apps.googleusercontent.com">
       <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900 via-gray-100 to-blue-900 flex justify-center items-center h-screen fixed-div ">
         <div className=" w-1/5 h-[678.6px] bg-[#2B3467] rounded-l-3xl">
           <div className="flex justify-center items-end h-full ">
@@ -40,7 +40,7 @@ const SignUpCard = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-lg w-full py- bg-white  shadow-md bg-opacity-30 backdrop-blur-sm rounded-r-3xl">
+        <div className="max-w-lg w-full py-6 bg-white h-[678.6px] shadow-md bg-opacity-30 backdrop-blur-sm rounded-r-3xl">
           <div className="flex flex-col items-center ">
             {/* Logo Placeholder - Replace 'Logo' with your actual logo component or image */}
             <div className="flex w-20 mx-auto  ">
@@ -134,23 +134,25 @@ const SignUpCard = () => {
             <div className="text-center justify-between items-center mt-2 w-80 ">
               <p>
                 Already have an account?{" "}
-                
-                <Link to={"/login"} className="text-blue-600"> Sign In</Link>
+                <Link to={"/login"} className="text-blue-600">
+                  {" "}
+                  Sign In
+                </Link>
               </p>
-              <div className="w-full flex justify-center bg-white ">
+              <div className="flex justify-center ">
                 <GoogleLogin
-                  className="w-400px "
-                  onSuccess={(cred) => {
-                    console.log(cred);
+                  className=""
+                  onSuccess={(credentialResponse) => {
+                    console.log(credentialResponse);
                   }}
-                  onerror={() => {
-                    console.log("error");
+                  onError={() => {
+                    console.log("Login Failed");
                   }}
                 />
               </div>
 
-              <button
-                onClick={() => login()}
+              {/* <button
+                onClick={() => handleLogin()}
                 className="flex items-center justify-center w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 mt-2 mb-8 focus:outline-none focus:ring-2 focus:ring-offset-2  opacity-100 hover:bg-gray-100 "
               >
                 Continue with Google
@@ -179,7 +181,7 @@ const SignUpCard = () => {
                     d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
                   ></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
